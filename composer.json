@@ -1,0 +1,16 @@
+{
+  "name": "abergasov/citymobil",
+  "description": "Test task",
+  "require": {
+    "php": "^7.3.0",
+    "symfony/console": "^5.0",
+    "vlucas/phpdotenv": "^4.1",
+    "paragonie/easydb": "^2.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "Console\\": "console/",
+      "App\\": "src/"
+    }
+  }
+}
