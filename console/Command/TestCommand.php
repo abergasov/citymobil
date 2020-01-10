@@ -29,7 +29,7 @@ class TestCommand extends Command {
             'agaain_worlds2',
         ];
 
-        $prefixArr = ['nex', 'test', 'again'];
+        $prefixArr = ['nex', 'test', 'agaain', 'dsdasds'];
         foreach ($prefixArr as $singlePrefix) {
             echo 'pattern:' . $singlePrefix . PHP_EOL;
             echo 'search via regexp' . PHP_EOL . '-------------' . PHP_EOL;
@@ -37,7 +37,7 @@ class TestCommand extends Command {
             echo 'found matches: ' . count($matches) . PHP_EOL;
             var_dump($matches);
             echo 'search via substr' . PHP_EOL . '-------------' . PHP_EOL;
-            $matches = $this->parseRegexpData($data, $singlePrefix);
+            $matches = $this->parseData($data, $singlePrefix);
             echo 'found matches: ' . count($matches) . PHP_EOL;
             var_dump($matches);
             echo PHP_EOL;
@@ -61,7 +61,7 @@ class TestCommand extends Command {
         $result = [];
         $prefixLength = strlen($prefix);
         foreach ($words as $singleWorld) {
-            if (!substr( $singleWorld, 0, $prefixLength ) === $prefix) {
+            if (substr( $singleWorld, 0, $prefixLength ) !== $prefix) {
                 continue;
             }
             $result[] = $singleWorld;
